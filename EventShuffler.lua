@@ -124,10 +124,10 @@ function readEventShufflerSettings()
 				if components[1] == "NUMBER_OF_RAM_WRITES_ON_EVENT" then
 					NUMBER_OF_RAM_WRITES_ON_EVENT = tonumber(components[2])
 				end
-				if components[1] == "RAM_WRITE_MIN" and tonumber("0x" .. components[2]) > 0 then
+				if components[1] == "RAM_WRITE_MIN" and string.sub(components[2], 1, 1) ~= "-" and tonumber("0x" .. components[2]) > 0 then
 					RAM_WRITE_MIN = tonumber("0x" .. components[2])
 				end
-				if components[1] == "RAM_WRITE_MAX" and tonumber("0x" .. components[2]) > 0 then
+				if components[1] == "RAM_WRITE_MAX" and string.sub(components[2], 1, 1) ~= "-" and tonumber("0x" .. components[2]) > 0 then
 					RAM_WRITE_MAX = tonumber("0x" .. components[2])
 				end
 				if components[1] == "RAM_WRITE_DOMAIN" then
